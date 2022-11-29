@@ -1,8 +1,17 @@
 # Backend Functions
-
-import psutil, os
-from colorama import Fore
-from pathlib import Path
+import sys
+try:
+    import psutil, os
+    from colorama import Fore
+    from pathlib import Path
+    import requests
+except:
+    print("Sorry, it seems you haven't install the required packeges")
+    print("Run : ")
+    print("\t pip install psutil")
+    print("\t pip install colorama")
+    sys.exit()
+    
 
 # TODO : Create For Battery
 def displayBattery():
