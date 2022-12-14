@@ -68,3 +68,15 @@ def displayOther():
     print(f"Level Of Processors : {env['PROCESSOR_LEVEL']}")
     print(f"Architecture Of Processor : {env['PROCESSOR_ARCHITECTURE']}\n")
     print('-'*40)
+
+def displayLarge():
+    partitions = psutil.disk_partitions()
+    print(partitions)
+    print(Fore.GREEN)
+    for part in partitions:
+        path = Path(part.mountpoint)
+
+        for f, sub, files in os.walk(path):
+            for file in files:
+                print(Path(file).stat().st_size)
+        
